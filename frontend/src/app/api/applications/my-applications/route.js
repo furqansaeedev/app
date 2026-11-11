@@ -2,11 +2,6 @@ import { NextResponse } from "next/server";
 import { jwtVerify } from "jose";
 import { PrismaClient } from "@/generated/prisma/client";
 
-// Tell Next.js this route must NOT be statically prerendered.
-// It reads request.cookies, so it must run dynamically on every request.
-export const dynamic = "force-dynamic";
-export const runtime = "nodejs";
-
 const prisma = new PrismaClient();
 
 async function getAuthenticatedUserId(request) {
